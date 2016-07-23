@@ -19,3 +19,8 @@
 2016-07-23 19:08:24,061 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\git\YoutubeDownloader\src\main\resources
 2016-07-23 19:08:24,063 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2016-07-23 19:08:24,063 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\git\YoutubeDownloader\src\test\resources
+2016-07-23 19:33:00,244 [Worker-8] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.video:Downloader:0.0.1-SNAPSHOT @ E:\OnlineMovie\Downloader\pom.xml.
+2016-07-23 19:34:28,499 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-07-23 19:34:28,500 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\OnlineMovie\Downloader\src\main\resources
+2016-07-23 19:34:28,504 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-07-23 19:34:28,505 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\OnlineMovie\Downloader\src\test\resources

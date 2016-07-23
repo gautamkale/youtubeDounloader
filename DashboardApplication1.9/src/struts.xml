@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+   
+ <struts>
+ <constant name="struts.multipart.saveDir" value="D:/tmp"> </constant> 
+  <package name="default" namespace="/" extends="struts-default">
+    
+   
+  <result-types>
+         <result-type name="tiles" 
+         class="org.apache.struts2.views.tiles.TilesResult" />
+      </result-types>
+ <action name="getTicket" class="com.dashboard.controller.TicketDetailAction" method="getPriorityCount">
+  <result name="priorityCount" type="tiles">dashboard</result>
+  <result name="failure">/error.jsp</result>
+  </action>
+  <action name="getPriorityDetail" class="com.dashboard.controller.TicketDetailAction" method="getPriorityDetail">
+  <result name="prioritydetail" type="tiles">prioritydetail</result>
+  <result name="failure">/error.jsp</result>
+  </action>
+ <action name="getStatusDetail" class="com.dashboard.controller.TicketDetailAction" method="getStatusDetail">
+  <result name="statusdetail" type="tiles">statusdetail</result>
+  <result name="failure">/error.jsp</result>
+  </action>
+   <action name="getBacklogDetail" class="com.dashboard.controller.TicketDetailAction" method="getBacklogAndReopenDetail">
+  <result name="backlog" type="tiles">backlog</result>
+  <result name="failure">/error.jsp</result>
+  </action>
+  
+  <action name="userValidation" class="com.dashboard.controller.MenuAction" method="validateUser">
+  <result name="validate" type="tiles">validate</result>
+  <result name="error" type="tiles">loginPage</result>
+  </action>
+  <action name="login" class="com.dashboard.controller.MenuAction" method="login">
+  <result name="login" type="tiles">loginPage</result> 
+  </action>
+  
+  <action name="up" class="com.dashboard.controller.UploadAction">
+        
+ 
+  <result name="upload" type="tiles">upload</result>
+    <result name ="input" type="tiles" >validate</result> 
+  <!-- <result name="failure">error.jsp</result> -->
+   
+  </action>
+<!--     <action name="emailer" 
+         class="com.dashboard.controller.Emailer"
+         method="execute">
+         <result name="success">/success.jsp</result>
+         <result name="error">/error.jsp</result>
+         
+      </action> -->
+         <action name="getClusterData"   class="com.dashboard.controller.ClusterWiseDetailsControl"   method="getClusterDetail">
+        <result name="clusterwisedetail" type="tiles">showClusterData</result>
+         <result name="error">/error.jsp</result>
+         
+      </action>
+      
+      <action name="searchform" class="com.dashboard.controller.MenuAction" method="searchForm">
+  <result name="search" type="tiles">search</result> 
+  </action>
+      
+    </package>
+
+
+	<package name="listdata" namespace="/" extends="json-default">
+		<action name="getCompletList" class="com.dashboard.controller.MenuAction"
+			method="autoCompletList">
+			<result name="autocomplete" type="json">/search.jsp</result>
+			<result name="failure">/error.jsp</result>
+		</action>
+		
+		<action name="getSearchData" class="com.dashboard.controller.MenuAction" method="getserachDataAction">
+			<result name="searchData" type="json">/search.jsp</result>
+			<result name="failure">/error.jsp</result>
+		</action>
+		<action name="UploadDate" class="com.dashboard.controller.UploadTimeAction">
+			<result name="date" type="json">/Header.jsp</result>
+			<result name="failure">/error.jsp</result>
+		</action>
+		<action name="showTable" class="com.dashboard.controller.BusinessServiceTable">
+			<result name="send" type="json">/upload.jsp</result>
+			<result name="failure">/error.jsp</result>
+		</action>
+		<action name="updateTable" class="com.dashboard.controller.UpdateBsData">
+			<result name="update" type="json">/upload.jsp</result>
+			<result name="failure">/error.jsp</result>
+		</action>
+
+	</package>
+
+ 
+ 
+ </struts>

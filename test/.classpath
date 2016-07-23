@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="lib" path="E:/pdf jar/pdfonej_t_p5.1.0.398/bin/bcmail-jdk14.jar"/>
+	<classpathentry kind="lib" path="E:/pdf jar/pdfonej_t_p5.1.0.398/bin/bcprov-ext-jdk14.jar"/>
+	<classpathentry kind="lib" path="E:/pdf jar/pdfonej_t_p5.1.0.398/bin/bcprov-jdk14.jar"/>
+	<classpathentry kind="lib" path="E:/pdf jar/pdfonej_t_p5.1.0.398/bin/jaf.jar"/>
+	<classpathentry kind="lib" path="E:/pdf jar/pdfonej_t_p5.1.0.398/bin/javamail.jar"/>
+	<classpathentry kind="lib" path="E:/pdf jar/pdfonej_t_p5.1.0.398/bin/PDFOne.jar"/>
+	<classpathentry kind="lib" path="E:/pdf jar/pdfonej_t_p5.1.0.398/bin/PDFOneJavaViewer_Executable.jar"/>
+	<classpathentry kind="lib" path="E:/pdf jar/aspose-pdf-9.5.2-jdk14.jar"/>
+	<classpathentry kind="lib" path="E:/pdf jar/aspose-pdf-9.5.2-jdk16.jar"/>
+	<classpathentry kind="lib" path="F:/youtubjar/apache-httpcomponents-httpcore.jar/apache-httpcomponents-httpcore.jar"/>
+	<classpathentry kind="lib" path="F:/youtubjar/apache-httpcomponents-httpclient.jar/apache-httpcomponents-httpclient.jar"/>
+	<classpathentry kind="lib" path="F:/youtubjar/commons-logging-1.2-bin/commons-logging-1.2/commons-logging-1.2.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

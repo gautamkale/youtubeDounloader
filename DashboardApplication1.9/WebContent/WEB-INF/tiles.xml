@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+   "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+   "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+   <definition name="baseTemplet" template="/baseTemplet.jsp">
+      <put-attribute name="title"  value="NSN Dashboard"/>
+        <put-attribute name="header"  value="/Header.jsp"/>     
+      <put-attribute name="menu"   value="/leftMenuBar.jsp"/>
+      <put-attribute name="body"   value="/body.jsp"/>
+     
+   </definition>
+  <definition name="dashboard" extends="baseTemplet">
+      <put-attribute name="title"  value="NSN Dashboard"/>
+      <put-attribute name="body"   value="/pages/Dashboard.jsp"/>      
+   </definition>
+ <definition name="prioritydetail" extends="baseTemplet">
+      <put-attribute name="title"  value="Priority wise Data"/>
+      <put-attribute name="body"   value="/priorityData.jsp"/>      
+   </definition> 
+   <definition name="statusdetail" extends="baseTemplet">
+      <put-attribute name="title"  value="Status wise Data"/>
+      <put-attribute name="body"   value="/statusData.jsp"/>      
+   </definition> 
+
+ <definition name="backlog" extends="baseTemplet">
+      <put-attribute name="title"  value="Backlog And Overdue Tickets"/>
+      <put-attribute name="body"   value="/backlogAndOverDueData.jsp"/>      
+   </definition> 
+    <definition name="validate" extends="baseTemplet">
+      <put-attribute name="title"  value="Upload"/>
+      <put-attribute name="body"   value="/upload.jsp"/>      
+   </definition> 
+    <definition name="upload" extends="baseTemplet">
+      <put-attribute name="title"  value="Upload Completed"/>
+      <put-attribute name="body"   value="/successfullyUploaded.jsp"/>      
+   </definition>
+   <definition name="loginPage" extends="baseTemplet">
+      <put-attribute name="title"  value="login"/>
+      <put-attribute name="body"   value="/loginPage.jsp"/>      
+   </definition>
+   <definition name="search" extends="baseTemplet">
+      <put-attribute name="title"  value="Search Form"/>
+      <put-attribute name="body"   value="/search.jsp"/>      
+   </definition>
+      <definition name="showClusterData" extends="baseTemplet">
+      <put-attribute name="title"  value="Cluster Details"/>
+      <put-attribute name="body"   value="/clusterWiseData.jsp"/>      
+   </definition>
+   
+   
+   
+</tiles-definitions>
