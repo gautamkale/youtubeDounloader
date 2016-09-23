@@ -2,6 +2,11 @@ package com.servlet;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.TreeMap;
 import java.util.logging.Logger;
 
 import javax.servlet.ServletException;
@@ -9,6 +14,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.json.JSONObject;
 
 import com.video.Stack;
 import com.video.Utility;
@@ -42,6 +49,7 @@ public class VideoInfo extends HttpServlet {
 		
 		  String url=request.getParameter("url");
 		  System.out.println(url);
+		  PrintWriter writer = response.getWriter();
 		  final Logger log = Logger.getLogger(Stack.class.getCanonicalName());
 		  try {
 			
@@ -53,12 +61,22 @@ public class VideoInfo extends HttpServlet {
 			String outdir = "F:\\youtubjar";
 			int format = 18; // http://en.wikipedia.org/wiki/YouTube#Quality_and_codecs
 			String encoding = "UTF-8";
-			String userAgent = "Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.2.13) Gecko/20101203 Firefox/3.6.13";
+			//String userAgent = "Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.2.13) Gecko/20101203 Firefox/3.6.13";
+			String userAgent = request.getHeader("User-Agent");
 			File outputDir = new File(outdir);
 			String extension = ut.getExtension(format);
 
-			ut.play(videoId, format, encoding, userAgent, outputDir, extension);
+			List<TreeMap<String,String>> urlParam=ut.play(videoId, format, encoding, userAgent, outputDir, extension);
+			ut.removeDublicat(urlParam);
+			
+			List<JSONObject> urlInfoParam = new ArrayList<JSONObject>();
 
+			for(TreeMap<String, String> data : urlParam) {
+			    JSONObject obj = new JSONObject(data);
+			    urlInfoParam.add(obj);
+			}
+			 writer.println(urlInfoParam);
+			 writer.flush();
 		} catch (Throwable t) {
 			t.printStackTrace();
 		}
